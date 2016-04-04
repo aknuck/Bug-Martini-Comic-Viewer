@@ -20,7 +20,7 @@ def getImage(link):
 	html = urllib2.urlopen(link).read()
 	regex = re.compile("<meta property=\"og:image\" content=\".+\" />")
 	for m in regex.finditer(html):
-		return m.group()[35:m.group().index("/>")-2]
+		return (m.group()[35:m.group().index("/>")-2]).replace("520%2C177","1005%2C343")
 
 # Gets the name of the comic from the given link
 def getName(link):
